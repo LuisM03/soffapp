@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace soffapp.Models;
+
+public partial class Producto
+{
+    public long IdProducto { get; set; }
+
+    public string Nombre { get; set; } = null!;
+
+    public decimal Precio { get; set; }
+
+    public bool Estado { get; set; }
+
+    public virtual ICollection<AsociacionProducto> AsociacionProductos { get; set; } = new List<AsociacionProducto>();
+
+    public virtual ICollection<Orden> Ordens { get; set; } = new List<Orden>();
+}
