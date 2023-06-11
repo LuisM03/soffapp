@@ -1,49 +1,220 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - soffapp</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/soffapp.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">soffapp</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Blank Page</title>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - soffapp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    .avatar {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      border-radius: 100%;
+    }
+
+    .avatar img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .side {
+      background-color: #0453F4;
+      color: white;
+    }
+
+    .foot{
+      border: none;
+      background-color: #F4F6F9;
+    }
+
+  </style>
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="bi bi-arrow-right"></i></a>
+      </li>
+     
+    </ul>
+    <p class="mb-0 fw-bold">Hola Mascus Levin 👋</p>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="bi bi-bell-fill"></i>
+          <span class="badge badge-danger navbar-badge">2</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link py-1" data-toggle="dropdown" href="#">
+          <div class="avatar">
+            <img src="../../img/Avatar5.png" alt="">
+          </div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item d-flex align-items-center">
+              <i class="bi bi-person-fill mr-2"></i> <p>Perfil</p>
+            </a>
+            
+            <a href="#" class="dropdown-item d-flex align-items-center">
+              <i class="bi bi-question-circle-fill mr-2"></i> <p>Centro de ayuda</p>
+            </a>
+    
+            <a href="#" class="dropdown-item d-flex align-items-center">
+              <i class="bi bi-door-open-fill mr-2"></i> <p>Cerrar sesión</p>
+            </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-no-expand  sidebar-dark-primary side">
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link border-0 d-flex align-items-center">
+      <img src="../../img/logo.png" alt="SOFF logo" class="brand-image">
+      <span class="brand-text d-flex flex-column text-white">
+        <span class="fw-bold" style="margin-bottom: -2px; font-weight: bold;">SOFF</span>
+      </span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item ">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link text-white">
+              <i class="nav-icon bi bi-grid-1x2-fill"></i>
+              <p class="ml-1">Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../widgets.html" class="nav-link text-white">
+              <i class="bi bi-ticket-perforated-fill nav-icon"></i>
+              <p class="ml-1">Ventas</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">
+              <i class="bi bi-handbag-fill nav-icon"></i>
+              <p class="ml-1">Compras</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">
+              <i class="bi bi-pie-chart-fill nav-icon"></i>
+              <p class="ml-1">Insumos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">
+              <i class="nav-icon bi bi-cup-hot-fill"></i>
+              <p class="ml-1">Productos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">
+              <i class="nav-icon bi bi-people-fill"></i>
+              <p class="ml-1">Proveedores</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white">
+              <i class="nav-icon bi bi-gear-fill"></i>
+              <p class="ml-1">Configuración</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <p>@ViewData["Title"]</p>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      @RenderBody()
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer foot d-flex align-items-center justify-content-center">
+    <p class="mb-0">Copyright &copy; SOFF - System Optimized Fast Food 2023 All rights reserved.</p>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../js/demo.js"></script>
 </body>
 </html>
