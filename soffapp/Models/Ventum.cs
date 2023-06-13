@@ -14,6 +14,4 @@ public partial class Ventum
     public decimal? Total { get; set; }
 
     public string? TipoVenta { get; set; }
-
-    public virtual ICollection<Orden> Ordens { get; set; } = new List<Orden>();
 }

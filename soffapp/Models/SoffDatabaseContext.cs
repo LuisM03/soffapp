@@ -23,9 +23,9 @@ public partial class SoffDatabaseContext : DbContext
 
     public virtual DbSet<Insumo> Insumos { get; set; }
 
-    public virtual DbSet<Orden> Ordens { get; set; }
-
     public virtual DbSet<OrdenCompra> OrdenCompras { get; set; }
+
+    public virtual DbSet<OrdenVentum> OrdenVenta { get; set; }
 
     public virtual DbSet<Producto> Productos { get; set; }
 
@@ -123,31 +123,6 @@ public partial class SoffDatabaseContext : DbContext
             entity.Property(e => e.Stock).HasColumnName("stock");
         });
 
-        modelBuilder.Entity<Orden>(entity =>
-        {
-            entity.HasKey(e => e.IdOrden);
-
-            entity.ToTable("orden");
-
-            entity.Property(e => e.IdOrden).HasColumnName("id_orden");
-            entity.Property(e => e.IdProducto).HasColumnName("id_producto");
-            entity.Property(e => e.IdVenta).HasColumnName("id_venta");
-            entity.Property(e => e.PrecioUnitario)
-                .HasColumnType("decimal(16, 2)")
-                .HasColumnName("precio_unitario");
-            entity.Property(e => e.Total)
-                .HasColumnType("decimal(16, 2)")
-                .HasColumnName("total");
-
-            entity.HasOne(d => d.IdProductoNavigation).WithMany(p => p.Ordens)
-                .HasForeignKey(d => d.IdProducto)
-                .HasConstraintName("FK_orden_Producto");
-
-            entity.HasOne(d => d.IdVentaNavigation).WithMany(p => p.Ordens)
-                .HasForeignKey(d => d.IdVenta)
-                .HasConstraintName("FK_orden_venta");
-        });
-
         modelBuilder.Entity<OrdenCompra>(entity =>
         {
             entity.HasKey(e => e.IdOrden);
@@ -175,6 +150,25 @@ public partial class SoffDatabaseContext : DbContext
             entity.HasOne(d => d.IdInsumoNavigation).WithMany(p => p.OrdenCompras)
                 .HasForeignKey(d => d.IdInsumo)
                 .HasConstraintName("FK_orden_compra_insumo");
+        });
+
+        modelBuilder.Entity<OrdenVentum>(entity =>
+        {
+            entity.HasKey(e => e.IdOrden);
+
+            entity.ToTable("orden_venta");
+
+            entity.Property(e => e.IdOrden).HasColumnName("id_orden");
+            entity.Property(e => e.Cantidad).HasColumnName("cantidad");
+            entity.Property(e => e.Estado).HasColumnName("estado");
+            entity.Property(e => e.IdProducto).HasColumnName("id_producto");
+            entity.Property(e => e.IdVenta).HasColumnName("id_venta");
+            entity.Property(e => e.Importe)
+                .HasColumnType("decimal(16, 2)")
+                .HasColumnName("importe");
+            entity.Property(e => e.PrecioUnitario)
+                .HasColumnType("decimal(16, 2)")
+                .HasColumnName("precio_unitario");
         });
 
         modelBuilder.Entity<Producto>(entity =>

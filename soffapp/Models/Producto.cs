@@ -14,6 +14,4 @@ public partial class Producto
     public bool Estado { get; set; }
 
     public virtual ICollection<AsociacionProducto> AsociacionProductos { get; set; } = new List<AsociacionProducto>();
-
-    public virtual ICollection<Orden> Ordens { get; set; } = new List<Orden>();
 }
