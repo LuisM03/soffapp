@@ -150,7 +150,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link text-white">
+            <a asp-controller="Productos" asp-action="Index" class="nav-link text-white">
               <i class="nav-icon bi bi-cup-hot-fill"></i>
               <p class="ml-1">Productos</p>
             </a>
@@ -190,6 +190,7 @@
     <!-- Main content -->
     <section class="content">
       @RenderBody()
+      @RenderSection("scripts", required: false)
     </section>
     <!-- /.content -->
   </div>
